@@ -1,38 +1,33 @@
 ---
 title: "instacart_again"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+Including Necessary Libraries
 ```{r message=FALSE, warning=FALSE, results='hide'}
 library(data.table)
 library(dplyr)
 library(ggplot2)
 library(knitr)
 library(stringr)
-library(DT)
-```
-
-## Including Plots
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-
-plot(pressure)
+library(magrittr)
 ```
 Reading files into data.table 
 ```{r}
 getwd()
 ### Read in the data
-orders <- fread("Great Lakes/instacart/data/orders.csv")
-products <- fread('Great Lakes/instacart/data/products.csv')
-order_products_train <- fread('Great Lakes/instacart/data/order_products__train.csv')
-order_products_prior <- fread('Great Lakes/instacart/data/order_products__prior.csv')
-aisles <- fread('Great Lakes/instacart/data/aisles.csv')
-departments <- fread('Great Lakes/instacart/data/departments.csv')
-
+setwd("/Users/thusharadulam/Great Lakes/instacart/")
+orders <- fread("data/orders.csv")
+products <- fread('data/products.csv')
+order_products_train <- fread('data/order_products__train.csv')
+order_products_prior <- fread('data/order_products__prior.csv')
+aisles <- fread('data/aisles.csv')
+departments <- fread('data/departments.csv')
 
 str(orders)
 str(order_products_prior)
@@ -54,6 +49,7 @@ prior_order = orders[orders$eval_set=="prior",]
 peak_traffic <- prior_order %>% 
   count(order_hour_of_day,order_dow)
 head(peak_traffic)
+
 # Peak hours
 prior_order %>% 
   ggplot(aes(x=order_hour_of_day)) +
@@ -65,8 +61,6 @@ weekly_max = peak_traffic %>%
   summarise(Max=max(n)) 
 
 
-head(peak_traffic_new)
-
 pt_plot1 <- peak_traffic %>%
   ggplot(aes(x=order_hour_of_day,y = n,group=order_dow,color=order_dow)) +
   geom_line()  
@@ -74,14 +68,9 @@ pt_plot1 <- peak_traffic %>%
 pt_plot1 + facet_wrap(~ order_dow)+
   stat_summary(fun.y = "max",geom = "point",size=3)
 
-
-
-?ggplot
-
 # Peak days of the week 
 prior_order %>% 
   ggplot(aes(x=order_dow)) +
   geom_line(stat="count",fill="blue")
 
 ```
-
