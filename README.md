@@ -1,2 +1,2 @@
-# updarts
+# Capstone
 Cap stone project team
