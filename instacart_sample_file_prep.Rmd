@@ -1,0 +1,105 @@
+---
+title: "instacart_sample_file_prep"
+output:
+  html_document: default
+  pdf_document: default
+---
+# Libraries
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(sqldf)
+library(dplyr)
+library(reshape)
+library(arules)
+```
+
+# Read files
+```{r}
+O =read.csv("data/orders.csv")
+O_T=read.csv("data/order_products__train.csv")
+O_P=read.csv("data/order_products__prior.csv")
+P = read.csv("data/products.csv")
+D = read.csv("data/departments.csv")
+A = read.csv("data/aisles.csv")
+```
+
+Total Orders - 32,14,874
+Total customers - 2,06,209 = 7500(test) + 131209(train)
+
+
+# Building train user set  
+Find train user IDs to build train data;sample it
+```{r}
+train_user <- as.matrix(unique(O[O$eval_set == "train",]$user_id))  
+
+#test/train sampling
+set.seed(1234)
+idx = sample(1:nrow(train_user),.7*nrow(train_user))
+train_user_sample = train_user[idx,]   # 91846 records
+test_user_sample = train_user[-idx,]   # 39363 records
+```
+
+# Extract 500 customers
+```{r}
+#train_user_sample <- train_user_sample[1:500]
+as.data.frame(train_user_sample) ->train_user_sample
+names(train_user_sample)  = "user"
+#test_user_sample <- test_user_sample[1:500]
+as.data.frame(test_user_sample) ->test_user_sample
+names(test_user_sample)  = "user"
+```
+#train_orders  # 15,24,629 orders  # 8547
+#test_orders   # 6,53,957  orders  # 8128
+
+
+# Extract complete order details;limit to 1000 users
+```{r}
+print(paste("starting query" , Sys.time()))
+sqldf("select  * from O
+   left outer join O_P on O.order_id = O_P.order_id
+   left outer join P on O_P.product_id = P.product_id
+   left outer join D on P.department_id = D.department_id
+   left outer join A on P.aisle_id = A.aisle_id
+  where O.eval_set = 'prior' and
+  O.user_id in (select user from train_user_sample limit 1000)")  ->  train_X
+
+print(paste("Ending" , Sys.time()))
+str(train_X)
+dim(train_X)
+```
+
+ 
+# Adding Cum sum of order days to get a time factor
+```{r}
+train_X ->trainX
+unique(trainX[,c(1:2,7)]) ->utrainX
+utrainX[is.na(utrainX$days_since_prior_order),]$days_since_prior_order =0 
+ave(utrainX$days_since_prior_order, utrainX$user_id, FUN=cumsum) ->
+  utrainX$days_cumsum
+left_join(trainX,utrainX[,-3], by = c("order_id","user_id")) -> trainX
+```
+
+
+
+# Write prepared files to CSV
+```{r}
+#write.csv(users,"users500.csv")
+write.csv(trainX , "train_X.csv")
+
+```
+
+# Extract purchase predictions(Y) for extracted users
+```{r}
+print(paste("starting query" , Sys.time()))
+sqldf("select  * from O
+   left outer join O_T on O.order_id = O_T.order_id
+   left outer join P on O_T.product_id = P.product_id
+   left outer join D on P.department_id = D.department_id
+   left outer join A on P.aisle_id = A.aisle_id
+  where O.eval_set = 'train' and
+  O.user_id in (select user from train_user_sample limit 100)")  -> train_Y
+#str(train_Y)
+#dim(train_Y)
+
+write.csv(train_Y , "train_Y.csv")
+```
