@@ -1,0 +1,301 @@
+"","order_id","product_id","add_to_cart_order","reordered","product_id..5","product_name","aisle_id","department_id","department_id..9","department","user_id","eval_set","order_number","order_dow","order_hour_of_day","days_since_prior_order"
+"1",343199,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",26,5,17,5
+"2",343199,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",26,5,17,5
+"3",343199,17762,3,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",26,5,17,5
+"4",343199,48544,4,1,48544,"Compleats Chicken Breast Gravy Mashed Potatoes Microwaveable Meal",4,9,9,"dry goods pasta",17,"prior",26,5,17,5
+"5",343199,4591,5,0,4591,"Quick 1 Minute Oatmeal",130,14,14,"breakfast",17,"prior",26,5,17,5
+"6",343199,36463,6,1,36463,"Chili Sauce",72,13,13,"pantry",17,"prior",26,5,17,5
+"7",348137,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",39,5,16,11
+"8",348137,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",39,5,16,11
+"9",348137,7026,3,1,7026,"Sparkling Mineral Water, Natural Lemon Flavor",115,7,7,"beverages",17,"prior",39,5,16,11
+"10",348137,17040,4,1,17040,"Classic Roast Instant Coffee Crystals",26,7,7,"beverages",17,"prior",39,5,16,11
+"11",348137,19766,5,1,19766,"Ultra Thin Slices Swiss Cheese",21,16,16,"dairy eggs",17,"prior",39,5,16,11
+"12",348137,16486,6,0,16486,"Diet Pepsi Slim Cans",77,7,7,"beverages",17,"prior",39,5,16,11
+"13",348137,29589,7,1,29589,"Vanilla Chocolate Chip Ice Cream",37,1,1,"frozen",17,"prior",39,5,16,11
+"14",348137,25307,8,1,25307,"Tender white meat turkey, pasta, mushrooms and celery in a creamy sauce Turkey Tetrazzini",38,1,1,"frozen",17,"prior",39,5,16,11
+"15",348137,21187,9,1,21187,"Classic Macaroni & Beef in Tomato Sauce",38,1,1,"frozen",17,"prior",39,5,16,11
+"16",348137,16797,10,1,16797,"Strawberries",24,4,4,"produce",17,"prior",39,5,16,11
+"17",348137,14146,11,1,14146,"Sliced Wheat Bread",112,3,3,"bakery",17,"prior",39,5,16,11
+"18",348137,9641,12,1,9641,"Action Pacs, Fresh Scent with Dawn",74,17,17,"household",17,"prior",39,5,16,11
+"19",348137,7992,13,0,7992,"Natural Choice Honey Deli Ham",96,20,20,"deli",17,"prior",39,5,16,11
+"20",415389,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",20,5,13,7
+"21",415389,47141,2,1,47141,"Cola",77,7,7,"beverages",17,"prior",20,5,13,7
+"22",415389,18534,3,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",20,5,13,7
+"23",415389,17762,4,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",20,5,13,7
+"24",415389,5077,5,0,5077,"100% Whole Wheat Bread",112,3,3,"bakery",17,"prior",20,5,13,7
+"25",415389,42356,6,1,42356,"Strawberry Preserves",88,13,13,"pantry",17,"prior",20,5,13,7
+"26",601444,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",17,5,21,4
+"27",601444,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",17,5,21,4
+"28",601444,17762,3,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",17,5,21,4
+"29",601444,33560,4,0,33560,"Italian Bread Crumbs",5,13,13,"pantry",17,"prior",17,5,21,4
+"30",601444,29791,5,0,29791,"Original Chicken Seasoned Coating Mix",5,13,13,"pantry",17,"prior",17,5,21,4
+"31",603376,47141,1,1,47141,"Cola",77,7,7,"beverages",17,"prior",22,6,16,4
+"32",603376,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",22,6,16,4
+"33",603376,21553,3,1,21553,"Lowfat 2% Milkfat Cottage Cheese",108,16,16,"dairy eggs",17,"prior",22,6,16,4
+"34",603376,17762,4,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",22,6,16,4
+"35",603376,16797,5,1,16797,"Strawberries",24,4,4,"produce",17,"prior",22,6,16,4
+"36",603376,19468,6,0,19468,"Classic Yellow Mustard",72,13,13,"pantry",17,"prior",22,6,16,4
+"37",603376,40592,7,0,40592,"Ultra Soft Facial 3-Ply White Facial Tissues",54,17,17,"household",17,"prior",22,6,16,4
+"38",603376,18855,8,0,18855,"Great Grains Crunchy Pecans Cereal",121,14,14,"breakfast",17,"prior",22,6,16,4
+"39",603534,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",14,6,17,5
+"40",603534,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",14,6,17,5
+"41",603534,36552,3,0,36552,"Gourmet Popping Corn Original",23,19,19,"snacks",17,"prior",14,6,17,5
+"42",603534,47031,4,0,47031,"Kentucky Straight Bourbon Whiskey",124,5,5,"alcohol",17,"prior",14,6,17,5
+"43",603534,17762,5,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",14,6,17,5
+"44",603534,38444,6,0,38444,"Chardonnay",62,5,5,"alcohol",17,"prior",14,6,17,5
+"45",603534,14146,7,0,14146,"Sliced Wheat Bread",112,3,3,"bakery",17,"prior",14,6,17,5
+"46",603534,812,8,0,812,"Healthy Grains Oats & Honey Clusters with Toasted Coconut Gluten Free",57,14,14,"breakfast",17,"prior",14,6,17,5
+"47",603534,47940,9,1,47940,"Light Strawberry Yogurt",120,16,16,"dairy eggs",17,"prior",14,6,17,5
+"48",674977,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",36,3,12,30
+"49",674977,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",36,3,12,30
+"50",674977,38618,3,1,38618,"Organic Chunky Vegetable Soup",69,15,15,"canned goods",17,"prior",36,3,12,30
+"51",674977,16188,4,0,16188,"Chicken A La King",38,1,1,"frozen",17,"prior",36,3,12,30
+"52",674977,40203,5,1,40203,"Mint Chip Ice Cream",37,1,1,"frozen",17,"prior",36,3,12,30
+"53",674977,1774,6,1,1774,"Butter Pecan Ice Cream",37,1,1,"frozen",17,"prior",36,3,12,30
+"54",674977,9006,7,1,9006,"Naturе's Calorie-Free Sweetener",17,13,13,"pantry",17,"prior",36,3,12,30
+"55",674977,14146,8,1,14146,"Sliced Wheat Bread",112,3,3,"bakery",17,"prior",36,3,12,30
+"56",674977,9641,9,1,9641,"Action Pacs, Fresh Scent with Dawn",74,17,17,"household",17,"prior",36,3,12,30
+"57",674977,36130,10,1,36130,"Natural Choice Deli Oven Roasted Turkey",96,20,20,"deli",17,"prior",36,3,12,30
+"58",674977,26767,11,1,26767,"No Calorie Sweetener Packets",17,13,13,"pantry",17,"prior",36,3,12,30
+"59",674977,48933,12,0,48933,"Free and Gentle Liquid Laundry Detergent",75,17,17,"household",17,"prior",36,3,12,30
+"60",674977,23117,13,0,23117,"Enriched Farina Hot Cereal",130,14,14,"breakfast",17,"prior",36,3,12,30
+"61",697863,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",29,6,14,5
+"62",697863,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",29,6,14,5
+"63",697863,17762,3,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",29,6,14,5
+"64",697863,38618,4,1,38618,"Organic Chunky Vegetable Soup",69,15,15,"canned goods",17,"prior",29,6,14,5
+"65",697863,9387,5,1,9387,"Granny Smith Apples",24,4,4,"produce",17,"prior",29,6,14,5
+"66",697863,40203,6,0,40203,"Mint Chip Ice Cream",37,1,1,"frozen",17,"prior",29,6,14,5
+"67",697863,1774,7,0,1774,"Butter Pecan Ice Cream",37,1,1,"frozen",17,"prior",29,6,14,5
+"68",791858,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",34,5,12,16
+"69",791858,47141,2,1,47141,"Cola",77,7,7,"beverages",17,"prior",34,5,12,16
+"70",791858,18534,3,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",34,5,12,16
+"71",791858,17040,4,1,17040,"Classic Roast Instant Coffee Crystals",26,7,7,"beverages",17,"prior",34,5,12,16
+"72",791858,40203,5,1,40203,"Mint Chip Ice Cream",37,1,1,"frozen",17,"prior",34,5,12,16
+"73",791858,21187,6,1,21187,"Classic Macaroni & Beef in Tomato Sauce",38,1,1,"frozen",17,"prior",34,5,12,16
+"74",791858,43986,7,1,43986,"Natural California Raisins",117,19,19,"snacks",17,"prior",34,5,12,16
+"75",791858,1073,8,1,1073,"Carving Board Oven Roasted Turkey",96,20,20,"deli",17,"prior",34,5,12,16
+"76",791858,12720,9,0,12720,"Light Spread Butter Substitute",36,16,16,"dairy eggs",17,"prior",34,5,12,16
+"77",791858,26767,10,1,26767,"No Calorie Sweetener Packets",17,13,13,"pantry",17,"prior",34,5,12,16
+"78",805025,17762,1,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",11,4,15,4
+"79",805025,7350,2,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",11,4,15,4
+"80",805025,47141,3,1,47141,"Cola",77,7,7,"beverages",17,"prior",11,4,15,4
+"81",805025,18534,4,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",11,4,15,4
+"82",805025,43986,5,0,43986,"Natural California Raisins",117,19,19,"snacks",17,"prior",11,4,15,4
+"83",805025,36130,6,0,36130,"Natural Choice Deli Oven Roasted Turkey",96,20,20,"deli",17,"prior",11,4,15,4
+"84",805025,35419,7,0,35419,"Handmade Vodka From Austin, Texas",124,5,5,"alcohol",17,"prior",11,4,15,4
+"85",805025,16797,8,1,16797,"Strawberries",24,4,4,"produce",17,"prior",11,4,15,4
+"86",805025,9387,9,0,9387,"Granny Smith Apples",24,4,4,"produce",17,"prior",11,4,15,4
+"87",805025,21187,10,1,21187,"Classic Macaroni & Beef in Tomato Sauce",38,1,1,"frozen",17,"prior",11,4,15,4
+"88",805025,15125,11,1,15125,"Tender white meat turkey & stuffing in a homestyle gravy with russet mashed potatoes Roast Turkey",38,1,1,"frozen",17,"prior",11,4,15,4
+"89",805025,6212,12,1,6212,"White meat chicken, shredded cabbage, julienne yellow carrots and spicy red coconut flavored curry Thai-Style Chicken Spring Rolls",38,1,1,"frozen",17,"prior",11,4,15,4
+"90",805025,10921,13,0,10921,"Turkey sausage with egg whites and reduced fat cheese on an English muffin Turkey Sausage English Muffin",52,1,1,"frozen",17,"prior",11,4,15,4
+"91",900554,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",10,0,15,4
+"92",900554,27629,2,0,27629,"Trusted Care 2-Ply Tissues",54,17,17,"household",17,"prior",10,0,15,4
+"93",900554,48544,3,0,48544,"Compleats Chicken Breast Gravy Mashed Potatoes Microwaveable Meal",4,9,9,"dry goods pasta",17,"prior",10,0,15,4
+"94",900554,12855,4,0,12855,"Compleats Turkey & Dressing",4,9,9,"dry goods pasta",17,"prior",10,0,15,4
+"95",900554,32498,5,0,32498,"Lemon Pepper Fish Complete Meals",38,1,1,"frozen",17,"prior",10,0,15,4
+"96",900554,9641,6,0,9641,"Action Pacs, Fresh Scent with Dawn",74,17,17,"household",17,"prior",10,0,15,4
+"97",900554,19766,7,1,19766,"Ultra Thin Slices Swiss Cheese",21,16,16,"dairy eggs",17,"prior",10,0,15,4
+"98",900554,48682,8,0,48682,"Sauerkraut",110,13,13,"pantry",17,"prior",10,0,15,4
+"99",900554,15844,9,0,15844,"Petite Whole Green Beans",116,1,1,"frozen",17,"prior",10,0,15,4
+"100",912404,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",12,2,14,5
+"101",912404,47141,2,1,47141,"Cola",77,7,7,"beverages",17,"prior",12,2,14,5
+"102",912404,17762,3,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",12,2,14,5
+"103",912404,38760,4,0,38760,"California Chardonnay",62,5,5,"alcohol",17,"prior",12,2,14,5
+"104",912404,21553,5,0,21553,"Lowfat 2% Milkfat Cottage Cheese",108,16,16,"dairy eggs",17,"prior",12,2,14,5
+"105",1385397,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",38,1,15,30
+"106",1385397,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",38,1,15,30
+"107",1385397,26767,3,1,26767,"No Calorie Sweetener Packets",17,13,13,"pantry",17,"prior",38,1,15,30
+"108",1385397,9006,4,1,9006,"Naturе's Calorie-Free Sweetener",17,13,13,"pantry",17,"prior",38,1,15,30
+"109",1385397,40203,5,1,40203,"Mint Chip Ice Cream",37,1,1,"frozen",17,"prior",38,1,15,30
+"110",1385397,44492,6,0,44492,"Deli Counter Turkey Breast",96,20,20,"deli",17,"prior",38,1,15,30
+"111",1385397,29589,7,1,29589,"Vanilla Chocolate Chip Ice Cream",37,1,1,"frozen",17,"prior",38,1,15,30
+"112",1385847,45190,1,0,45190,"Vodka",124,5,5,"alcohol",17,"prior",27,4,10,6
+"113",1385847,47141,2,1,47141,"Cola",77,7,7,"beverages",17,"prior",27,4,10,6
+"114",1385847,17762,3,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",27,4,10,6
+"115",1385847,48544,4,1,48544,"Compleats Chicken Breast Gravy Mashed Potatoes Microwaveable Meal",4,9,9,"dry goods pasta",17,"prior",27,4,10,6
+"116",1385847,47940,5,1,47940,"Light Strawberry Yogurt",120,16,16,"dairy eggs",17,"prior",27,4,10,6
+"117",1385847,21187,6,1,21187,"Classic Macaroni & Beef in Tomato Sauce",38,1,1,"frozen",17,"prior",27,4,10,6
+"118",1385847,30992,7,1,30992,"Shrimp Alfredo",38,1,1,"frozen",17,"prior",27,4,10,6
+"119",1385847,9387,8,1,9387,"Granny Smith Apples",24,4,4,"produce",17,"prior",27,4,10,6
+"120",1385847,26767,9,1,26767,"No Calorie Sweetener Packets",17,13,13,"pantry",17,"prior",27,4,10,6
+"121",1385847,2927,10,1,2927,"Tartar Sauce Squeeze Bottle",72,13,13,"pantry",17,"prior",27,4,10,6
+"122",1385847,5128,11,1,5128,"Paper Towel",54,17,17,"household",17,"prior",27,4,10,6
+"123",1385847,25464,12,1,25464,"Unscented 2-Ply Double Roll Bathroom Tissue",54,17,17,"household",17,"prior",27,4,10,6
+"124",1389057,7026,1,0,7026,"Sparkling Mineral Water, Natural Lemon Flavor",115,7,7,"beverages",17,"prior",13,1,13,6
+"125",1389057,7350,2,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",13,1,13,6
+"126",1389057,17762,3,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",13,1,13,6
+"127",1389057,31268,4,0,31268,"Sandwich Bags",85,17,17,"household",17,"prior",13,1,13,6
+"128",1389057,47577,5,0,47577,"Light Key Lime Pie Yogurt",120,16,16,"dairy eggs",17,"prior",13,1,13,6
+"129",1681401,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",2,5,10,3
+"130",1681401,18534,2,0,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",2,5,10,3
+"131",1681401,17762,3,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",2,5,10,3
+"132",1681401,42356,4,0,42356,"Strawberry Preserves",88,13,13,"pantry",17,"prior",2,5,10,3
+"133",1681401,16797,5,0,16797,"Strawberries",24,4,4,"produce",17,"prior",2,5,10,3
+"134",1681401,6334,6,0,6334,"Roasted Turkey and Vegetables",38,1,1,"frozen",17,"prior",2,5,10,3
+"135",1681401,6212,7,0,6212,"White meat chicken, shredded cabbage, julienne yellow carrots and spicy red coconut flavored curry Thai-Style Chicken Spring Rolls",38,1,1,"frozen",17,"prior",2,5,10,3
+"136",1681401,30992,8,0,30992,"Shrimp Alfredo",38,1,1,"frozen",17,"prior",2,5,10,3
+"137",1681401,8730,9,0,8730,"Comfort Roasted Turkey Breast Dinner",38,1,1,"frozen",17,"prior",2,5,10,3
+"138",1681401,10300,10,0,10300,"Glazed Chicken",38,1,1,"frozen",17,"prior",2,5,10,3
+"139",1681401,15925,11,0,15925,"Macaroni and Cheese",38,1,1,"frozen",17,"prior",2,5,10,3
+"140",1681401,21187,12,0,21187,"Classic Macaroni & Beef in Tomato Sauce",38,1,1,"frozen",17,"prior",2,5,10,3
+"141",1681401,25307,13,0,25307,"Tender white meat turkey, pasta, mushrooms and celery in a creamy sauce Turkey Tetrazzini",38,1,1,"frozen",17,"prior",2,5,10,3
+"142",1681401,20215,14,0,20215,"Tuna Noodle Casserole",38,1,1,"frozen",17,"prior",2,5,10,3
+"143",1681401,15125,15,0,15125,"Tender white meat turkey & stuffing in a homestyle gravy with russet mashed potatoes Roast Turkey",38,1,1,"frozen",17,"prior",2,5,10,3
+"144",1683378,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",24,1,10,5
+"145",1683378,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",24,1,10,5
+"146",1683378,17762,3,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",24,1,10,5
+"147",1683378,16797,4,1,16797,"Strawberries",24,4,4,"produce",17,"prior",24,1,10,5
+"148",1683378,38618,5,1,38618,"Organic Chunky Vegetable Soup",69,15,15,"canned goods",17,"prior",24,1,10,5
+"149",1719551,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",16,1,12,6
+"150",1719551,47141,2,1,47141,"Cola",77,7,7,"beverages",17,"prior",16,1,12,6
+"151",1719551,18534,3,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",16,1,12,6
+"152",1719551,17762,4,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",16,1,12,6
+"153",1719551,5128,5,1,5128,"Paper Towel",54,17,17,"household",17,"prior",16,1,12,6
+"154",1719551,25464,6,0,25464,"Unscented 2-Ply Double Roll Bathroom Tissue",54,17,17,"household",17,"prior",16,1,12,6
+"155",1719551,14146,7,1,14146,"Sliced Wheat Bread",112,3,3,"bakery",17,"prior",16,1,12,6
+"156",1719551,2927,8,1,2927,"Tartar Sauce Squeeze Bottle",72,13,13,"pantry",17,"prior",16,1,12,6
+"157",1737705,7350,1,0,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",1,2,13,NA
+"158",1737705,47141,2,0,47141,"Cola",77,7,7,"beverages",17,"prior",1,2,13,NA
+"159",1737705,17762,3,0,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",1,2,13,NA
+"160",2148135,38760,1,1,38760,"California Chardonnay",62,5,5,"alcohol",17,"prior",30,6,15,0
+"161",2180313,18534,1,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"train",41,3,10,30
+"162",2180313,1217,2,0,1217,"Select-A-Size Paper Towels, White, 2 Huge Rolls = 5 Regular Rolls  Towels/Napkins",54,17,17,"household",17,"train",41,3,10,30
+"163",2180313,12720,3,1,12720,"Light Spread Butter Substitute",36,16,16,"dairy eggs",17,"train",41,3,10,30
+"164",2180313,16797,4,1,16797,"Strawberries",24,4,4,"produce",17,"train",41,3,10,30
+"165",2180313,43352,5,0,43352,"Raspberries",32,4,4,"produce",17,"train",41,3,10,30
+"166",2180313,4374,6,0,4374,"Ultra Soft Bathroom Tissue Double Rolls",54,17,17,"household",17,"train",41,3,10,30
+"167",2373492,26767,1,0,26767,"No Calorie Sweetener Packets",17,13,13,"pantry",17,"prior",9,3,13,3
+"168",2373492,9006,2,0,9006,"Naturе's Calorie-Free Sweetener",17,13,13,"pantry",17,"prior",9,3,13,3
+"169",2373492,5128,3,0,5128,"Paper Towel",54,17,17,"household",17,"prior",9,3,13,3
+"170",2373492,17040,4,0,17040,"Classic Roast Instant Coffee Crystals",26,7,7,"beverages",17,"prior",9,3,13,3
+"171",2373492,49131,5,0,49131,"Smoked Turkey Breast Slices",96,20,20,"deli",17,"prior",9,3,13,3
+"172",2430354,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",8,0,15,6
+"173",2430354,47141,2,1,47141,"Cola",77,7,7,"beverages",17,"prior",8,0,15,6
+"174",2430354,18534,3,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",8,0,15,6
+"175",2430354,38618,4,1,38618,"Organic Chunky Vegetable Soup",69,15,15,"canned goods",17,"prior",8,0,15,6
+"176",2430354,17762,5,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",8,0,15,6
+"177",2430354,20934,6,1,20934,"Hot BBQ Sauce",5,13,13,"pantry",17,"prior",8,0,15,6
+"178",2430354,36463,7,0,36463,"Chili Sauce",72,13,13,"pantry",17,"prior",8,0,15,6
+"179",2430354,11919,8,1,11919,"Tender white meat chicken in a red chile lime sauce with a medley of roasted corn, peppers, and rice Chile Lime Chicken",38,1,1,"frozen",17,"prior",8,0,15,6
+"180",2508834,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",19,5,11,6
+"181",2508834,17762,2,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",19,5,11,6
+"182",2508834,16797,3,1,16797,"Strawberries",24,4,4,"produce",17,"prior",19,5,11,6
+"183",2508834,19766,4,1,19766,"Ultra Thin Slices Swiss Cheese",21,16,16,"dairy eggs",17,"prior",19,5,11,6
+"184",2508834,18534,5,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",19,5,11,6
+"185",2508834,21187,6,1,21187,"Classic Macaroni & Beef in Tomato Sauce",38,1,1,"frozen",17,"prior",19,5,11,6
+"186",2508834,25307,7,1,25307,"Tender white meat turkey, pasta, mushrooms and celery in a creamy sauce Turkey Tetrazzini",38,1,1,"frozen",17,"prior",19,5,11,6
+"187",2508834,9176,8,0,9176,"Sesame Stir Fry with Chicken",38,1,1,"frozen",17,"prior",19,5,11,6
+"188",2553089,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",33,3,11,9
+"189",2553089,47141,2,1,47141,"Cola",77,7,7,"beverages",17,"prior",33,3,11,9
+"190",2553089,18534,3,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",33,3,11,9
+"191",2553089,38618,4,1,38618,"Organic Chunky Vegetable Soup",69,15,15,"canned goods",17,"prior",33,3,11,9
+"192",2616505,47141,1,1,47141,"Cola",77,7,7,"beverages",17,"prior",6,4,17,5
+"193",2616505,7350,2,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",6,4,17,5
+"194",2616505,40844,3,1,40844,"Robert Mondavi",62,5,5,"alcohol",17,"prior",6,4,17,5
+"195",2616505,20934,4,0,20934,"Hot BBQ Sauce",5,13,13,"pantry",17,"prior",6,4,17,5
+"196",2616505,9634,5,0,9634,"Light Butter Microwave Popcorn",23,19,19,"snacks",17,"prior",6,4,17,5
+"197",2616505,2927,6,0,2927,"Tartar Sauce Squeeze Bottle",72,13,13,"pantry",17,"prior",6,4,17,5
+"198",2648319,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",7,1,13,4
+"199",2648319,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",7,1,13,4
+"200",2648319,17762,3,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",7,1,13,4
+"201",2648319,19766,4,0,19766,"Ultra Thin Slices Swiss Cheese",21,16,16,"dairy eggs",17,"prior",7,1,13,4
+"202",2648319,22309,5,0,22309,"Soft & Smooth100% Whole Wheat Bread",112,3,3,"bakery",17,"prior",7,1,13,4
+"203",2648319,38618,6,1,38618,"Organic Chunky Vegetable Soup",69,15,15,"canned goods",17,"prior",7,1,13,4
+"204",2648319,6334,7,1,6334,"Roasted Turkey and Vegetables",38,1,1,"frozen",17,"prior",7,1,13,4
+"205",2648319,30992,8,1,30992,"Shrimp Alfredo",38,1,1,"frozen",17,"prior",7,1,13,4
+"206",2648319,46844,9,0,46844,"Simple Favorites Lasagna with Meat Sauce",38,1,1,"frozen",17,"prior",7,1,13,4
+"207",2660930,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",15,2,16,3
+"208",2660930,29004,2,0,29004,"Classic Decaf Instant Coffee",26,7,7,"beverages",17,"prior",15,2,16,3
+"209",2660930,18534,3,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",15,2,16,3
+"210",2660930,17762,4,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",15,2,16,3
+"211",2660930,1073,5,0,1073,"Carving Board Oven Roasted Turkey",96,20,20,"deli",17,"prior",15,2,16,3
+"212",2680214,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",3,3,10,5
+"213",2680214,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",3,3,10,5
+"214",2680214,17762,3,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",3,3,10,5
+"215",2680214,38618,4,0,38618,"Organic Chunky Vegetable Soup",69,15,15,"canned goods",17,"prior",3,3,10,5
+"216",2680214,44265,5,0,44265,"Roasted white meat chicken, whole wheat noodles, green beans & carrots in a creamy chili peanut sauce. Thai-Style Noodles With Chicken",38,1,1,"frozen",17,"prior",3,3,10,5
+"217",2680214,6212,6,1,6212,"White meat chicken, shredded cabbage, julienne yellow carrots and spicy red coconut flavored curry Thai-Style Chicken Spring Rolls",38,1,1,"frozen",17,"prior",3,3,10,5
+"218",2680214,11919,7,0,11919,"Tender white meat chicken in a red chile lime sauce with a medley of roasted corn, peppers, and rice Chile Lime Chicken",38,1,1,"frozen",17,"prior",3,3,10,5
+"219",2760791,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",32,1,22,4
+"220",2760791,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",32,1,22,4
+"221",2760791,38760,3,1,38760,"California Chardonnay",62,5,5,"alcohol",17,"prior",32,1,22,4
+"222",2760791,1774,4,1,1774,"Butter Pecan Ice Cream",37,1,1,"frozen",17,"prior",32,1,22,4
+"223",2760791,40203,5,1,40203,"Mint Chip Ice Cream",37,1,1,"frozen",17,"prior",32,1,22,4
+"224",2773605,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",35,6,13,8
+"225",2773605,47141,2,1,47141,"Cola",77,7,7,"beverages",17,"prior",35,6,13,8
+"226",2773605,18534,3,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",35,6,13,8
+"227",2773605,1774,4,1,1774,"Butter Pecan Ice Cream",37,1,1,"frozen",17,"prior",35,6,13,8
+"228",2773605,5128,5,1,5128,"Paper Towel",54,17,17,"household",17,"prior",35,6,13,8
+"229",2773605,40592,6,1,40592,"Ultra Soft Facial 3-Ply White Facial Tissues",54,17,17,"household",17,"prior",35,6,13,8
+"230",2795254,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",25,0,11,6
+"231",2795254,47141,2,1,47141,"Cola",77,7,7,"beverages",17,"prior",25,0,11,6
+"232",2795254,18534,3,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",25,0,11,6
+"233",2795254,17762,4,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",25,0,11,6
+"234",2795254,48544,5,1,48544,"Compleats Chicken Breast Gravy Mashed Potatoes Microwaveable Meal",4,9,9,"dry goods pasta",17,"prior",25,0,11,6
+"235",2795254,16797,6,1,16797,"Strawberries",24,4,4,"produce",17,"prior",25,0,11,6
+"236",2795254,18855,7,1,18855,"Great Grains Crunchy Pecans Cereal",121,14,14,"breakfast",17,"prior",25,0,11,6
+"237",2795254,17040,8,1,17040,"Classic Roast Instant Coffee Crystals",26,7,7,"beverages",17,"prior",25,0,11,6
+"238",2795254,5748,9,0,5748,"Free and Gentle High Efficiency Liquid Laundry Detergent",75,17,17,"household",17,"prior",25,0,11,6
+"239",2831726,47141,1,1,47141,"Cola",77,7,7,"beverages",17,"prior",37,2,12,13
+"240",2831726,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",37,2,12,13
+"241",2831726,7026,3,1,7026,"Sparkling Mineral Water, Natural Lemon Flavor",115,7,7,"beverages",17,"prior",37,2,12,13
+"242",2831726,47940,4,1,47940,"Light Strawberry Yogurt",120,16,16,"dairy eggs",17,"prior",37,2,12,13
+"243",2831726,19766,5,1,19766,"Ultra Thin Slices Swiss Cheese",21,16,16,"dairy eggs",17,"prior",37,2,12,13
+"244",2831726,29589,6,0,29589,"Vanilla Chocolate Chip Ice Cream",37,1,1,"frozen",17,"prior",37,2,12,13
+"245",2831726,42356,7,1,42356,"Strawberry Preserves",88,13,13,"pantry",17,"prior",37,2,12,13
+"246",2831726,19468,8,1,19468,"Classic Yellow Mustard",72,13,13,"pantry",17,"prior",37,2,12,13
+"247",2831726,9387,9,1,9387,"Granny Smith Apples",24,4,4,"produce",17,"prior",37,2,12,13
+"248",2831726,14146,10,1,14146,"Sliced Wheat Bread",112,3,3,"bakery",17,"prior",37,2,12,13
+"249",2831726,5128,11,1,5128,"Paper Towel",54,17,17,"household",17,"prior",37,2,12,13
+"250",2956367,18534,1,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",18,6,12,8
+"251",2956367,17762,2,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",18,6,12,8
+"252",2956367,47141,3,1,47141,"Cola",77,7,7,"beverages",17,"prior",18,6,12,8
+"253",2956367,7350,4,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",18,6,12,8
+"254",2956367,26767,5,1,26767,"No Calorie Sweetener Packets",17,13,13,"pantry",17,"prior",18,6,12,8
+"255",2956367,9006,6,1,9006,"Naturе's Calorie-Free Sweetener",17,13,13,"pantry",17,"prior",18,6,12,8
+"256",2956367,36552,7,1,36552,"Gourmet Popping Corn Original",23,19,19,"snacks",17,"prior",18,6,12,8
+"257",2956367,38618,8,1,38618,"Organic Chunky Vegetable Soup",69,15,15,"canned goods",17,"prior",18,6,12,8
+"258",3069802,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",23,3,23,4
+"259",3069802,17762,2,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",23,3,23,4
+"260",3069802,44265,3,1,44265,"Roasted white meat chicken, whole wheat noodles, green beans & carrots in a creamy chili peanut sauce. Thai-Style Noodles With Chicken",38,1,1,"frozen",17,"prior",23,3,23,4
+"261",3069802,14146,4,1,14146,"Sliced Wheat Bread",112,3,3,"bakery",17,"prior",23,3,23,4
+"262",3069802,38618,5,1,38618,"Organic Chunky Vegetable Soup",69,15,15,"canned goods",17,"prior",23,3,23,4
+"263",3141030,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",21,2,12,4
+"264",3141030,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",21,2,12,4
+"265",3141030,17762,3,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",21,2,12,4
+"266",3141030,38618,4,1,38618,"Organic Chunky Vegetable Soup",69,15,15,"canned goods",17,"prior",21,2,12,4
+"267",3141030,16797,5,1,16797,"Strawberries",24,4,4,"produce",17,"prior",21,2,12,4
+"268",3197376,47141,1,1,47141,"Cola",77,7,7,"beverages",17,"prior",4,1,14,5
+"269",3197376,17762,2,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",4,1,14,5
+"270",3197376,47940,3,0,47940,"Light Strawberry Yogurt",120,16,16,"dairy eggs",17,"prior",4,1,14,5
+"271",3197376,12513,4,0,12513,"Light Strawberries 'n Bananas Fat Free Yogurt",120,16,16,"dairy eggs",17,"prior",4,1,14,5
+"272",3197376,36736,5,0,36736,"Iodized Salt",104,13,13,"pantry",17,"prior",4,1,14,5
+"273",3197376,30992,6,1,30992,"Shrimp Alfredo",38,1,1,"frozen",17,"prior",4,1,14,5
+"274",3237467,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",5,6,17,5
+"275",3237467,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",5,6,17,5
+"276",3237467,40844,3,0,40844,"Robert Mondavi",62,5,5,"alcohol",17,"prior",5,6,17,5
+"277",3237467,15820,4,0,15820,"Cafe Cuisine Sesame Chicken",38,1,1,"frozen",17,"prior",5,6,17,5
+"278",3237467,30992,5,1,30992,"Shrimp Alfredo",38,1,1,"frozen",17,"prior",5,6,17,5
+"279",3314059,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",28,1,9,4
+"280",3314059,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",28,1,9,4
+"281",3314059,17762,3,1,17762,"Light Oaked Chardonnay",62,5,5,"alcohol",17,"prior",28,1,9,4
+"282",3314059,16797,4,1,16797,"Strawberries",24,4,4,"produce",17,"prior",28,1,9,4
+"283",3314059,36552,5,1,36552,"Gourmet Popping Corn Original",23,19,19,"snacks",17,"prior",28,1,9,4
+"284",3314059,14146,6,1,14146,"Sliced Wheat Bread",112,3,3,"bakery",17,"prior",28,1,9,4
+"285",3314059,38618,7,1,38618,"Organic Chunky Vegetable Soup",69,15,15,"canned goods",17,"prior",28,1,9,4
+"286",3327122,47141,1,1,47141,"Cola",77,7,7,"beverages",17,"prior",31,4,12,5
+"287",3327122,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",31,4,12,5
+"288",3327122,38760,3,1,38760,"California Chardonnay",62,5,5,"alcohol",17,"prior",31,4,12,5
+"289",3327122,9006,4,1,9006,"Naturе's Calorie-Free Sweetener",17,13,13,"pantry",17,"prior",31,4,12,5
+"290",3327122,40203,5,1,40203,"Mint Chip Ice Cream",37,1,1,"frozen",17,"prior",31,4,12,5
+"291",3327122,1774,6,1,1774,"Butter Pecan Ice Cream",37,1,1,"frozen",17,"prior",31,4,12,5
+"292",3327122,44234,7,0,44234,"Squeeze Tomato Ketchup",72,13,13,"pantry",17,"prior",31,4,12,5
+"293",3350883,7350,1,1,7350,"Natural Lime Flavor Sparkling Mineral Water",115,7,7,"beverages",17,"prior",40,4,11,27
+"294",3350883,18534,2,1,18534,"Grade A Extra Large Eggs",86,16,16,"dairy eggs",17,"prior",40,4,11,27
+"295",3350883,9006,3,1,9006,"Naturе's Calorie-Free Sweetener",17,13,13,"pantry",17,"prior",40,4,11,27
+"296",3350883,26767,4,1,26767,"No Calorie Sweetener Packets",17,13,13,"pantry",17,"prior",40,4,11,27
+"297",3350883,14146,5,1,14146,"Sliced Wheat Bread",112,3,3,"bakery",17,"prior",40,4,11,27
+"298",3350883,16797,6,1,16797,"Strawberries",24,4,4,"produce",17,"prior",40,4,11,27
+"299",3350883,18567,7,0,18567,"Low Fat No Chicken Noodle Soup",69,15,15,"canned goods",17,"prior",40,4,11,27
+"300",3350883,48933,8,1,48933,"Free and Gentle Liquid Laundry Detergent",75,17,17,"household",17,"prior",40,4,11,27
