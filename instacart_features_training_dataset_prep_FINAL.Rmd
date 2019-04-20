@@ -1,0 +1,365 @@
+---
+title: "instacart_training_dataset_prep"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+# Libraries
+```{r setup, include=FALSE}
+library(data.table)
+library(dplyr)
+library(lubridate)
+```
+#Mode Function
+```{r}
+
+getmode <- function(v){
+  uv <- unique(v)
+  uv[which.max(tabulate(match(v,uv)))]}
+
+# Hours difference - hours run from 0 to 23
+#circ_shift_dow<- function(x) { 
+#     ifelse(x>3,x-4,x+3)}
+
+hrDiff <- function(a,b) {
+   diff = ifelse(a>b,a-b,b-a) 
+   diff = min(diff,24-diff) 
+   return(diff)}
+
+dowDiff <- function(a,b) {
+   diff = ifelse(a>b,a-b,b-a) 
+   diff = min(diff,7-diff) 
+   return(diff)}
+```
+
+# Read files
+```{r}
+orders =fread("data/orders.csv")
+train_orders =fread("data/order_products__train.csv")
+prior_orders=fread("data/order_products__prior.csv")
+```
+
+# add days column to orders inorder to filter out orders older than 6 months
+```{r}
+orders %>% 
+  mutate(days_since_prior_order = ifelse(is.na(days_since_prior_order),0,
+                      days_since_prior_order))  %>% 
+  mutate(O_day = ave(days_since_prior_order,user_id,FUN = cumsum)) %>% setDT()->orders
+```
+
+# Building train/test user set; limit the size of dataset to 100 customers
+```{r}
+# train user set 
+orders[orders$eval_set == "train",c(2,4,8)]  ->train_user
+colnames(train_user)[2]  = "U_total_orders"
+colnames(train_user)[3]  = "U_last_O_day"
+head(train_user) 
+```
+# Future_features
+```{r}
+# train user set 
+orders[orders$eval_set == "train",c(2,5,6,7,8)]  ->user_FUT_features
+colnames(user_FUT_features)=c("user_id","FUT_order_dow","FUT_order_hod","FUT_days_since","FUT_O_day")
+write.csv(user_FUT_features, "user_FUT_features.csv",col.names = NA)
+#rm(user_FUT_features)
+```
+User_Features
+
+# Extract complete orders ; limit to last 10 orders
+```{r}
+train_user %>%
+  head(100) ->train_user
+train_user %>%
+  left_join(orders[orders$eval_set=="prior",], by = "user_id") -> user_orders
+user_orders[,-5] ->user_orders
+
+#user_orders$order_dt = user_orders$start_dt + days(user_orders$O_day)
+#user_orders[,names(user_orders) %in% c("user_id","order_id","order_number", #"order_dow","order_hour_of_day","days_since_prior_order","order_dt")] -> user_orders
+```
+
+# Limit prior orders
+```{r}
+#user_orders %>%
+#  filter(U_last_O_day-O_day <=180) ->user_orders
+```
+
+#customer summary
+         1. most frequent hour of the day
+         2. most frequent dow
+         3. average days between orders
+```{r}
+user_orders %>% 
+  group_by(user_id) %>% 
+     mutate(U_mostly_ord_hod = getmode(order_hour_of_day),
+            U_mostly_ord_dow = getmode(order_dow)) %>%
+  group_by(order_id) %>% 
+  mutate(O_ord_dow_abs_var= dowDiff(order_dow,U_mostly_ord_dow),
+         O_ord_hod_abs_var= hrDiff(order_hour_of_day,U_mostly_ord_hod) ) %>% 
+  group_by(user_id,U_total_orders,U_mostly_ord_hod,U_mostly_ord_dow) %>% 
+  summarise(U_mostly_ord_hod_var = median(O_ord_hod_abs_var),
+            U_mostly_ord_dow_var = median(O_ord_dow_abs_var))->user_feature
+#            U_dspo_mean = round(mean(days_since_prior_order)),
+#            U_dspo_sd = round(sd(days_since_prior_order)),
+#            U_days_since_last_purchase = as.numeric(U_last_order_day - O_day)) 
+#  left_join(train_user[,-c(5:6)], by ="user_id") 
+```
+
+# Build prior_order files
+```{r}
+user_orders %>% 
+  left_join(prior_orders, by="order_id") %>% setDT() -> user_prior_orders
+#rm(prior_orders)
+
+products = fread("data/products.csv")
+
+user_prior_orders %>% 
+  left_join(products) -> user_prior_orders
+
+user_prior_orders %>% 
+#  filter(x-order_dt > 180) %>% 
+  group_by(order_id) %>% 
+  mutate(O_reord_count = sum(reordered),
+        O_cart_size = n(),
+        O_aisles = n_distinct(aisle_id),
+        O_dept = n_distinct(department_id))  -> user_prior_orders
+user_prior_orders %>% 
+  group_by(order_id,O_cart_size,O_reord_count,O_aisles,O_dept) %>%
+  mutate(O_reord_ratio_in_cart =  round(O_reord_count/O_cart_size,2) ,
+         O_aisle_ratio_in_cart  = round(O_aisles / O_cart_size,2),
+         O_dept_ratio_in_cart   = round(O_dept/O_cart_size,2)) -> orders_features
+
+rm(user_orders)
+```
+
+# More user features
+```{r}
+orders_features %>%
+  group_by(user_id) %>% 
+  summarise(U_avg_reord_ratio_in_cart = round(mean(O_reord_ratio_in_cart),2),
+            U_avg_aise_ratio_in_cart  = round(mean(O_aisle_ratio_in_cart),2),
+            U_avg_dept_ratio_in_cart  = round(mean(O_dept_ratio_in_cart),2),
+            U_avg_cart_size       = round(mean(O_cart_size),1)) -> tmp_uf
+
+user_feature %>% 
+  merge(tmp_uf) -> user_feature
+rm(tmp_uf)
+```
+
+### Gather the complete list of products the customer ever purchased
+```{r}
+user_prior_orders %>% 
+  group_by(user_id,product_id) %>% 
+  summarize(UP_last_purchased = max(O_day) ) ->user_prod_cross
+write.csv(user_prod_cross,"user_prod_cross_complete.csv")
+```
+
+# User_product_cross features
+ Summarize at cross-product-level
+      1, number of orders
+      2. last day ordered
+      3. mostly ordered dow 
+      4. mostly ordered hod 
+      5. repeat frequency
+      6. percentage or orders of the product
+      7. Days since last order placed as a ratio of reorder frequency
+```{r}
+user_prior_orders %>% 
+  filter(U_last_O_day - O_day<=180) ->user_prior_orders
+
+user_prior_orders %>% 
+  group_by(user_id,product_id) %>% 
+     mutate(UP_mostly_ord_dow = getmode(order_dow),
+            UP_mostly_ord_hod = getmode(order_hour_of_day)) %>% 
+  group_by(order_id,user_id,product_id)  %>% 
+  mutate(UPO_ord_dow_abs_var = dowDiff(order_dow,UP_mostly_ord_dow),
+           UPO_ord_hod_abs_var= hrDiff(order_hour_of_day,UP_mostly_ord_hod)) ->UP_tmp
+
+UP_tmp %>% 
+  group_by(user_id,product_id,#U_last_O_day,
+           UP_mostly_ord_dow,UP_mostly_ord_hod,aisle_id,department_id) %>% 
+  summarize(UP_prd_ord_count = n(),
+            UP_days_since_last_purchase = first(U_last_O_day) - max(O_day),
+          UP_ord_dow_abs_var = median(UPO_ord_dow_abs_var),
+           UP_ord_hod_abs_var= median(UPO_ord_hod_abs_var),
+            UP_pur_duration = max(O_day) - min(O_day),
+            UP_add_to_cart_order = round(mean(add_to_cart_order/O_cart_size),2)) %>% 
+  mutate(UP_Pur_freq_days =round(UP_pur_duration/UP_prd_ord_count,1)) %>% 
+  mutate(UP_pur_due = ifelse(UP_Pur_freq_days==0,0, 
+              round(UP_days_since_last_purchase/UP_Pur_freq_days,2 ))) -> UP_tmp
+
+ UP_tmp[,c("user_id"                    
+ ,"product_id"                 
+ ,"UP_prd_ord_count"           
+ ,"UP_days_since_last_purchase"
+ ,"UP_mostly_ord_dow"
+ ,"UP_ord_dow_abs_var"         
+ ,"UP_mostly_ord_hod"
+ ,"UP_ord_hod_abs_var"         
+ ,"UP_pur_duration"            
+ ,"UP_add_to_cart_order"       
+ ,"UP_Pur_freq_days"           
+ ,"UP_pur_due"                 
+ ,"aisle_id"                   
+ ,"department_id")] ->user_prod_feature 
+
+
+rm(UP_tmp)
+```
+
+# User_aisle features 
+```{r}
+
+user_prior_orders %>% 
+  group_by(user_id,aisle_id) %>% 
+     mutate(UA_mostly_ord_dow = getmode(order_dow),
+            UA_mostly_ord_hod = getmode(order_hour_of_day)) %>% 
+  group_by(order_id,user_id,aisle_id)  %>% 
+  mutate(UAO_aisle_size = n(),
+           UAO_ord_dow_abs_var = dowDiff(order_dow,UA_mostly_ord_dow),
+           UAO_ord_hod_abs_var= hrDiff(order_hour_of_day,UA_mostly_ord_hod)) ->UA_tmp
+
+UA_tmp %>% 
+  group_by(user_id,aisle_id,#U_last_O_day,
+           UA_mostly_ord_dow,UA_mostly_ord_hod) %>% 
+  summarize(UA_aisle_ord_count = n(),
+            UA_days_since_last_purchase = first(U_last_O_day) - max(O_day),
+          UA_ord_dow_abs_var = median(UAO_ord_dow_abs_var),
+           UA_ord_hod_abs_var= median(UAO_ord_hod_abs_var),
+            UA_pur_duration = max(O_day) - min(O_day),
+            UA_add_to_cart_order = round(mean(add_to_cart_order/O_cart_size),2)) %>% 
+  mutate(UA_Pur_freq_days =round(UA_pur_duration/UA_aisle_ord_count,1)) %>% 
+  mutate(UA_pur_due = ifelse(UA_Pur_freq_days==0,0, 
+              round(UA_days_since_last_purchase/UA_Pur_freq_days,2 ))) -> UA_tmp
+
+ UA_tmp[,c("user_id"                    
+ ,"aisle_id"                   
+ ,"UA_aisle_ord_count"           
+ ,"UA_days_since_last_purchase"
+ ,"UA_mostly_ord_dow"
+ ,"UA_ord_dow_abs_var"         
+ ,"UA_mostly_ord_hod"
+ ,"UA_ord_hod_abs_var"         
+ ,"UA_pur_duration"            
+ ,"UA_add_to_cart_order"       
+ ,"UA_Pur_freq_days"           
+ ,"UA_pur_due")] ->user_aisle_feature 
+
+rm(UA_tmp)
+```
+# User Department features 
+```{r}
+
+user_prior_orders %>% 
+  group_by(user_id,department_id) %>% 
+     mutate(UD_mostly_ord_dow = getmode(order_dow),
+            UD_mostly_ord_hod = getmode(order_hour_of_day)) %>% 
+  group_by(order_id,user_id,department_id)  %>% 
+  mutate(UDO_dept_size = n(),
+           UDO_ord_dow_abs_var = dowDiff(order_dow,UD_mostly_ord_dow),
+           UDO_ord_hod_abs_var= hrDiff(order_hour_of_day,UD_mostly_ord_hod)) ->UD_tmp
+
+UD_tmp %>% 
+  group_by(user_id,department_id,#U_last_O_day,
+           UD_mostly_ord_dow,UD_mostly_ord_hod) %>% 
+  summarize(UD_dept_ord_count = n(),
+            UD_days_since_last_purchase = first(U_last_O_day) - max(O_day),
+          UD_ord_dow_abs_var = median(UDO_ord_dow_abs_var),
+           UD_ord_hod_abs_var= median(UDO_ord_hod_abs_var),
+            UD_pur_duration = max(O_day) - min(O_day),
+            UD_add_to_cart_order = round(mean(add_to_cart_order/O_cart_size),2)) %>% 
+  mutate(UD_Pur_freq_days =round(UD_pur_duration/UD_dept_ord_count,1)) %>% 
+  mutate(UD_pur_due = ifelse(UD_Pur_freq_days==0,0, 
+              round(UD_days_since_last_purchase/UD_Pur_freq_days,2 ))) -> UD_tmp
+
+ UD_tmp[,c("user_id"                    
+ ,"department_id"                   
+ ,"UD_dept_ord_count"           
+ ,"UD_days_since_last_purchase"
+ ,"UD_mostly_ord_dow"
+ ,"UD_ord_dow_abs_var"         
+ ,"UD_mostly_ord_hod"
+ ,"UD_ord_hod_abs_var"         
+ ,"UD_pur_duration"            
+ ,"UD_add_to_cart_order"       
+ ,"UD_Pur_freq_days"           
+ ,"UD_pur_due")] ->user_dept_feature 
+
+rm(UD_tmp)
+rm(user_prior_orders)
+```
+
+# Building FUT order features
+```{r}
+# train user set 
+orders[orders$eval_set == "train",c(1,2)]  ->future_ord
+future_ord[future_ord$user_id %in% train_user$user_id, ]  ->future_ord
+```
+
+# Training dataset 
+```{r}
+user_prod_feature %>% 
+  left_join(user_feature, by="user_id") %>% 
+  left_join(user_aisle_feature, by = c("user_id", "aisle_id")) %>% 
+  left_join(user_dept_feature, by = c("user_id", "department_id"))  %>% 
+  left_join(user_FUT_features,by=c("user_id"))  %>% setDT() ->prior_orders_features
+rm(user_prod_feature)
+rm(user_feature)
+rm(user_aisle_feature)
+rm(user_dept_feature)
+setkey(prior_orders_features)
+```
+
+
+# Prepare future orders(outcomes) for training
+```{r}
+future_ord %>% 
+  left_join(train_orders) %>% 
+  select(user_id,product_id,reordered) ->future_ord
+# test user set 
+#orders[orders$eval_set == "test",] %>% setDT() -> test_ord
+```
+
+#Final training file 
+```{r}
+prior_orders_features %>%                                 
+  left_join(future_ord,by = c("user_id", "product_id")) %>% 
+  mutate(ORDERED =  ifelse(is.na(reordered),0,1) ) -> training_data
+
+
+#apply(training_data[,c("UP_mostly_ord_hod","FUT_order_hod")], 1 ,
+#      function(x) hrDiff(x[1],x[2])) ->
+#  training_data$UP_hod_diff
+
+#apply(training_data[,c("UP_mostly_ord_dow","FUT_order_dow")], 1 ,
+#      function(x) dowDiff(x[1],x[2])) -> 
+#  training_data$UP_dow_diff
+
+#removecols = c("order_id","FUT_order_dow","FUT_order_hod","reordered")  # #,"product_name","department","aisle")
+#training_data[,!colnames(training_data) %in% removecols] ->training_data
+
+write.csv(training_data, "training_data10k.csv")
+```
+
+# Plots 
+```{r}
+#moved to instacart_plots
+```
+
+# Aisle features 
+```{r}
+#setDT(user_prior_orders_A_D)[,lapply(.SD,first),by=c("order_id","user_id","aisle_id"),
+#                .SDcols = c("order_dow","order_hour_of_day","order_dt","U_total_orders",
+#                "O_reord_count","O_cart_size")] ->tmp_aisle
+#setDT(user_prior_orders_A_D)[,lapply(.SD,mean),by=c("order_id","user_id","aisle_id"),
+#                             .SDcols = c("add_to_cart_order")] ->tmp1_aisle
+#setDT(tmp1_aisle)[,lapply(.SD,mean),by=c("user_id","aisle_id"),
+#                             .SDcols = c("add_to_cart_order")] ->tmp1_aisle
+#setDT(user_prior_orders_A_D)[,lapply(.SD,sum),by=c("order_id","user_id","aisle_id"),
+#                             .SDcols = c("reordered")] ->tmp2_aisle
+#setDT(tmp2_aisle)[,lapply(.SD,length),by=c("user_id","aisle_id"),
+#                             .SDcols = c("reordered")] ->tmp2_aisle
+#setDT(user_prior_orders_A_D)[,lapply(.SD,length),by=c("user_id","aisle_id"),
+#                             .SDcols = c("order_id")] ->tmp3_aisle
+#colnames(tmp3_aisle)[3] = "UA_num_of_orders"
+```
