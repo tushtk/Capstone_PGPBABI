@@ -1,0 +1,59 @@
+---
+title: "spark_code"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(doParallel)
+c1 = makePSOCKcluster(3)
+```
+
+## R Markdown
+
+
+```{r}
+#install.packages("sparklyr")
+library(sparklyr)
+spark_install(version = "2.0.0")
+
+sc <- spark_connect(master = "local", version = "2.0.0")
+```
+
+
+```{r}
+fread("reorder_may15.csv") ->train_data
+rmcols = c("product_id","user_id", "V1","aisle_id","department_id", "UP_days_since_last_purchase")
+train_data %>% select(-rmcols) ->train_data
+colnames(train_data) ->datacols
+
+train_data <- copy_to(sc, train_data,overwrite = T)
+partitions <- train_data %>%
+  sdf_partition(train_data = 0.75, test = 0.25, seed = 753)
+```
+
+ # Random fores
+```{r}
+ 
+features <- colnames(partitions$train_data)[-grep("ORDERED", colnames(partitions$train_data))]
+features
+
+
+partitions$train_data$ORDERED
+fit <- partitions$train_data %>% 
+     ml_random_forest(response = "ORDERED",   , type = "classification", features = datacols, )
+    
+feature_imp <- ml_tree_feature_importance(sc, fit)
+  
+summary(fit)
+  features <- as.character(feature_imp[1:10, 2])
+  
+pred <- ml_predict(fit, partitions$train_data) %>%
+    collect
+
+table(ifelse(pred$probability_1<.5,0,1) ,pred$ORDERED)
+library(ROCR)
+predobj = prediction(ifelse(pred$probability_1<.5,0,1) ,pred$ORDERED)
+perf = performance(predobj,"auc")
+ROCR::plot(perf)
+```
